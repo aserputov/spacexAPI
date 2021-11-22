@@ -15,6 +15,7 @@
 		0165ED85274B4A230064C9F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0165ED83274B4A230064C9F1 /* LaunchScreen.storyboard */; };
 		0165ED90274B4A230064C9F1 /* SpaceAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0165ED8F274B4A230064C9F1 /* SpaceAppTests.swift */; };
 		0165ED9B274B4A230064C9F1 /* SpaceAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0165ED9A274B4A230064C9F1 /* SpaceAppUITests.swift */; };
+		0165EDA9274B4B580064C9F1 /* spaceShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0165EDA8274B4B580064C9F1 /* spaceShip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0165ED96274B4A230064C9F1 /* SpaceAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0165ED9A274B4A230064C9F1 /* SpaceAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceAppUITests.swift; sourceTree = "<group>"; };
 		0165ED9C274B4A230064C9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0165EDA8274B4B580064C9F1 /* spaceShip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spaceShip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				0165ED81274B4A230064C9F1 /* Assets.xcassets */,
 				0165ED83274B4A230064C9F1 /* LaunchScreen.storyboard */,
 				0165ED86274B4A230064C9F1 /* Info.plist */,
+				0165EDA8274B4B580064C9F1 /* spaceShip.swift */,
 			);
 			path = SpaceApp;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				0165ED7D274B4A220064C9F1 /* ViewController.swift in Sources */,
 				0165ED79274B4A220064C9F1 /* AppDelegate.swift in Sources */,
+				0165EDA9274B4B580064C9F1 /* spaceShip.swift in Sources */,
 				0165ED7B274B4A220064C9F1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +441,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N4KRRM3L5N;
 				INFOPLIST_FILE = SpaceApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,6 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N4KRRM3L5N;
 				INFOPLIST_FILE = SpaceApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

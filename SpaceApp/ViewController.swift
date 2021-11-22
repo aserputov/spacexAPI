@@ -15,5 +15,19 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func GetData(_ sender: Any) {
+        let api = "https://api.spacexdata.com/v4/launches/5eb87d42ffd86e000604b384"
+        guard let url = URL(string: api) else {
+            print("ok")
+            return
+        }
+        
+        
+        URLSession.shared.dataTask(with: url) {(data, response, error) in
+            print(data)
+        }.resume()
+        
+    }
+    
 }
 
