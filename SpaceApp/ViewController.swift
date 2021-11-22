@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var desc: UILabel!
     
-    var index:Int = 1;
+    var index:Int = 0;
     
     private let apiFetcher = ApiFetcher.getInstance()
     
@@ -40,12 +40,37 @@ class ViewController: UIViewController {
 
 
     @IBAction func GetData(_ sender: Any) {
-//        let api = "https://api.spacexdata.com/v4/launches/5eb87d42ffd86e000604b384"
-//
+        if(index < 150){
         index = index + 1;
         self.apiFetcher.fetchData()
+        }else{
+            index = 0;
+            self.apiFetcher.fetchData()
+        }
 
     }
     
+    @IBAction func Back(_ sender: Any) {
+        if(index == 0){
+            index = 135
+            self.apiFetcher.fetchData()
+        }else{
+            index = index - 1;
+            print(index)
+            self.apiFetcher.fetchData()
+        }
+        
+        
+//        if(index == 1){
+//            index = 150
+//            self.apiFetcher.fetchData()
+//        }else{
+//            index = index - 1;
+//            self.apiFetcher.fetchData()
+//        }
+       
+       
+
+    }
 }
 
