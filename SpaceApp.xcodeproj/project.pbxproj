@@ -16,6 +16,7 @@
 		0165ED90274B4A230064C9F1 /* SpaceAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0165ED8F274B4A230064C9F1 /* SpaceAppTests.swift */; };
 		0165ED9B274B4A230064C9F1 /* SpaceAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0165ED9A274B4A230064C9F1 /* SpaceAppUITests.swift */; };
 		0165EDA9274B4B580064C9F1 /* spaceShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0165EDA8274B4B580064C9F1 /* spaceShip.swift */; };
+		0165EDAB274B68670064C9F1 /* ApiFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0165EDAA274B68670064C9F1 /* ApiFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		0165ED9A274B4A230064C9F1 /* SpaceAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceAppUITests.swift; sourceTree = "<group>"; };
 		0165ED9C274B4A230064C9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0165EDA8274B4B580064C9F1 /* spaceShip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spaceShip.swift; sourceTree = "<group>"; };
+		0165EDAA274B68670064C9F1 /* ApiFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				0165ED83274B4A230064C9F1 /* LaunchScreen.storyboard */,
 				0165ED86274B4A230064C9F1 /* Info.plist */,
 				0165EDA8274B4B580064C9F1 /* spaceShip.swift */,
+				0165EDAA274B68670064C9F1 /* ApiFetcher.swift */,
 			);
 			path = SpaceApp;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				0165ED7D274B4A220064C9F1 /* ViewController.swift in Sources */,
 				0165ED79274B4A220064C9F1 /* AppDelegate.swift in Sources */,
+				0165EDAB274B68670064C9F1 /* ApiFetcher.swift in Sources */,
 				0165EDA9274B4B580064C9F1 /* spaceShip.swift in Sources */,
 				0165ED7B274B4A220064C9F1 /* SceneDelegate.swift in Sources */,
 			);
