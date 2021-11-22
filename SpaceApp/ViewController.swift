@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var desc: UILabel!
     
+    var index:Int = 1;
+    
     private let apiFetcher = ApiFetcher.getInstance()
     
     private var cancellables:Set<AnyCancellable> = []
@@ -26,7 +28,7 @@ class ViewController: UIViewController {
                   print(changedData.count)
             
             if(changedData.count > 0){
-                let firstItem = changedData[0]
+                let firstItem = changedData[self.index]
                 self.number.text = "\(firstItem.id)"
                 self.name.text = firstItem.flightName
                 self.type.text = String(firstItem.success)
@@ -40,7 +42,7 @@ class ViewController: UIViewController {
     @IBAction func GetData(_ sender: Any) {
 //        let api = "https://api.spacexdata.com/v4/launches/5eb87d42ffd86e000604b384"
 //
-
+        index = index + 1;
         self.apiFetcher.fetchData()
 
     }
