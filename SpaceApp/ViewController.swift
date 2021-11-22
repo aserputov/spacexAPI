@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class ViewController: UIViewController {
 
@@ -16,20 +17,29 @@ class ViewController: UIViewController {
     
     private let apiFetcher = ApiFetcher.getInstance()
     
+    private var cancellables:Set<AnyCancellable> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.apiFetcher.$launchList.receive(on: RunLoop.main).sink { (changedData) in
+                  print("We saw a change in the api fetcher's launch list")
+                  print(changedData.count)
+            
+            if(changedData.count > 0){
+                let firstItem = changedData[0]
+                self.number.text = "\(firstItem.id)"
+                self.name.text = firstItem.flightName
+                self.type.text = String(firstItem.success)
+                self.desc.text = firstItem.missionDetails
+                
+            }
+              }.store(in: &cancellables)
     }
 
 
     @IBAction func GetData(_ sender: Any) {
 //        let api = "https://api.spacexdata.com/v4/launches/5eb87d42ffd86e000604b384"
-//        DispatchQueue.main.sync {
-//            number.text = "\(decodeItem.id)"
-//            self.name.text = decodeItem.flightName
-//            type.text = String(decodeItem.success)
-//            self.desc.text = decodeItem.missionDetails
-//        }
+//
 
         self.apiFetcher.fetchData()
 

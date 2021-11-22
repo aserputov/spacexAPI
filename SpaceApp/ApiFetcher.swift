@@ -6,8 +6,12 @@
 //
 
 import Foundation
-class ApiFetcher {
-    let api = "https://api.spacexdata.com/v4/launches/5eb87d42ffd86e000604b384"
+class ApiFetcher: ObservableObject{
+    let api = "https://api.spacexdata.com/v4/launches"
+    
+    
+    
+    @Published var launchList:[spaceShip] = [spaceShip]()
     
     func fetchData(){
         guard let url = URL(string: api) else {
@@ -27,12 +31,12 @@ class ApiFetcher {
 //                print(jsonData)
                 do{
                     let decoder = JSONDecoder()
-                    let decodeItem = try decoder.decode(spaceShip.self, from: jsonData)
+                    let decodeItem = try decoder.decode([spaceShip].self, from: jsonData)
                     
 //                    print(decodeItem)
                 
                    
-                    
+                    self.launchList = decodeItem
                     
                 }catch let error{
                     print("Error")
