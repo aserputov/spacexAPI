@@ -9,6 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var number: UILabel!
+    @IBOutlet weak var type: UILabel!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var desc: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -23,7 +28,7 @@ class ViewController: UIViewController {
         }
         
         
-        URLSession.shared.dataTask(with: url) {(data, response, error) in
+        URLSession.shared.dataTask(with: url) { [self](data, response, error) in
            
             if let err = error {
                     print("Error during fetch")
@@ -31,12 +36,20 @@ class ViewController: UIViewController {
                 return
             }
             if let jsonData = data{
-                print(jsonData)
+//                print(jsonData)
                 do{
                     let decoder = JSONDecoder()
                     let decodeItem = try decoder.decode(spaceShip.self, from: jsonData)
                     
-                    print(decodeItem)
+//                    print(decodeItem)
+                    DispatchQueue.main.sync {
+                        number.text = "\(decodeItem.id)"
+                        self.name.text = decodeItem.flightName
+                        type.text = String(decodeItem.success)
+                        self.desc.text = decodeItem.missionDetails
+                    }
+                   
+                    
                     
                 }catch let error{
                     print("Error")
