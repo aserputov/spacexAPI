@@ -24,8 +24,31 @@ class ViewController: UIViewController {
         
         
         URLSession.shared.dataTask(with: url) {(data, response, error) in
-            print(data)
+           
+            if let err = error {
+                    print("Error during fetch")
+                    print(err)
+                return
+            }
+            if let jsonData = data{
+                print(jsonData)
+                do{
+                    let decoder = JSONDecoder()
+                    let decodeItem = try decoder.decode(spaceShip.self, from: jsonData)
+                    
+                    print(decodeItem)
+                    
+                }catch let error{
+                    print("Error")
+                }
+           
+                
+            }
+            
         }.resume()
+        
+        
+        
         
     }
     
