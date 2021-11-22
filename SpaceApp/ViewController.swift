@@ -40,7 +40,7 @@ class ViewController: UIViewController {
 
 
     @IBAction func GetData(_ sender: Any) {
-        if(index < 150){
+        if(index < 136){
         index = index + 1;
         self.apiFetcher.fetchData()
         }else{
