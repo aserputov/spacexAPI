@@ -18,33 +18,21 @@ class ApiFetcher: ObservableObject{
             print("ok")
             return
         }
-        
-        
         URLSession.shared.dataTask(with: url) { [self](data, response, error) in
-           
             if let err = error {
-                    print("Error during fetch")
-                    print(err)
+                print("Error during fetch")
+                print(err)
                 return
             }
             if let jsonData = data{
-//                print(jsonData)
                 do{
                     let decoder = JSONDecoder()
                     let decodeItem = try decoder.decode([spaceShip].self, from: jsonData)
-                    
-//                    print(decodeItem)
-                
-                   
                     self.launchList = decodeItem
-                    
                 }catch let error{
                     print("Error")
                 }
-           
-                
             }
-            
         }.resume()
     }
     

@@ -20,19 +20,14 @@ struct spaceShip: Codable {
     }
     
     init(from decoder:Decoder) throws {
-            // 1. try to take the api response and convert it to data we can use
         let response = try decoder.container(keyedBy: CodingKeys.self)
-            // 2. extract the relevant keys from that api response
         self.id = try response.decodeIfPresent(Int.self, forKey: CodingKeys.id) ?? 0
         self.flightName = try response.decodeIfPresent(String.self, forKey: CodingKeys.flightName) ?? "No flightName provided"
         self.missionDetails = try response.decodeIfPresent(String.self, forKey: CodingKeys.missionDetails) ?? "No missionDetails provided"
         self.success = try response.decodeIfPresent(Bool.self, forKey: CodingKeys.success) ?? false
         }
 
-    
-    func encode(to encoder:Encoder) throws {
-            // do nothing
-        }
+    func encode(to encoder:Encoder) throws {}
 
     
 }
